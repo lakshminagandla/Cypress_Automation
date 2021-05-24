@@ -1,5 +1,5 @@
 {
-  "userNameTxt": "input[name='UserNames']",
+  "userNameTxt": "input[name='UserName']",
   "passwordTxt": "input[name='Password']",
   "signInBtn": "button[id='login']",
   "homePageDashboard": "a[href*='/Home/Dashboard']"

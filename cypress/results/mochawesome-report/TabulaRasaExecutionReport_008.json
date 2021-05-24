@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2021-05-24T10:42:37.452Z",
-    "end": "2021-05-24T10:42:44.636Z",
-    "duration": 7184,
+    "failures": 0,
+    "start": "2021-05-24T11:52:43.250Z",
+    "end": "2021-05-24T11:54:42.729Z",
+    "duration": 119479,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1443d88d-f349-4a04-b0dd-b0ebd08ecd74",
+      "uuid": "d007b338-71a4-47f0-beab-ebe2e8c5cf61",
       "title": "",
       "fullFile": "cypress\\integration\\vaccinations_poc.js",
       "file": "cypress\\integration\\vaccinations_poc.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2496f2a5-6d47-418d-87ef-721e6bcedc12",
-          "title": "Actions",
+          "uuid": "b0ef7485-4d7e-4845-8ed0-18f806c7b12d",
+          "title": "Administering vaccine via adding a new patient profile",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,35 +36,31 @@
           "tests": [
             {
               "title": "Administering vaccine via adding a new patient profile",
-              "fullTitle": "Actions Administering vaccine via adding a new patient profile",
+              "fullTitle": "Administering vaccine via adding a new patient profile Administering vaccine via adding a new patient profile",
               "timedOut": null,
-              "duration": 5688,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 117188,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.fixture('TestData/TestData.json').then(function (testData) {\n  loginPage.enterEmailAddress(testData.LoginUserName);\n  loginPage.enterPassword(testData.Password);\n  loginPage.clickSignInBtn();\n  homePage.ClickAddPatientUnderGearIcon();\n  var firstname = testData.PatientFirstName + Math.floor(Math.random() * 100000);\n  var lastname = testData.PatientLastName + Math.floor(Math.random() * 100000);\n  addPatient.fillPatientDetails(firstname, lastname, testData.Address, testData.City, testData.State, testData.ZIP);\n  addPatient.fillPatientContactAndClickAddButton(); //Instead of validating Green Toaster. We verified Created Patient Firstname & Lastname on Patient Page\n  //Technical Reason: Since the Green Toaster created on old DOM & as soon as we click OK new DOM gets loaded \n  //(i.e) New page navigated. So we took this approach\n  addPatient.validateCreatedPatient(firstname, lastname); //** Add validate for that  green toaster message stating:\n  //** “Success Account creation successful” should display in upper-right hand corner  */\n  patientDetailsPage.ClickVaccinationsTab();\n  patientDetailsPage.ClickAddNewButton();\n  patientDetailsPage.fillVaccineDetails();\n  patientDetailsPage.fillPatientDetails();\n  patientDetailsPage.fillContactDetails(); // Validated Green Toaster Success Message\n  patientDetailsPage.validateVaccineAdministered();\n});",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name='UserNames']`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name='UserNames']`, but never found it.\n    at Context.eval (https://beta-account.prescribewellness.com/__cypress/tests?p=cypress\\integration\\vaccinations_poc.js:509:12)",
-                "diff": null
-              },
-              "uuid": "167f64dc-b68c-45e9-9925-168bf67cc443",
-              "parentUUID": "2496f2a5-6d47-418d-87ef-721e6bcedc12",
+              "err": {},
+              "uuid": "e903a31e-20de-4d59-a78e-088c5a25a3f3",
+              "parentUUID": "b0ef7485-4d7e-4845-8ed0-18f806c7b12d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "167f64dc-b68c-45e9-9925-168bf67cc443"
+          "passes": [
+            "e903a31e-20de-4d59-a78e-088c5a25a3f3"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5688,
+          "duration": 117188,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

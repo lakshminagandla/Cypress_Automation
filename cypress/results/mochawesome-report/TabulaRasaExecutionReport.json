@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2021-05-24T10:41:56.704Z",
-    "end": "2021-05-24T10:42:05.155Z",
-    "duration": 8451,
+    "failures": 0,
+    "start": "2021-05-24T11:48:01.146Z",
+    "end": "2021-05-24T11:50:26.680Z",
+    "duration": 145534,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "fac5004c-0465-4dbc-b202-cea5c7dd5ad8",
+      "uuid": "126a2bf7-cb99-465a-9c62-5114e40ab923",
       "title": "",
       "fullFile": "cypress\\integration\\ecare_poc.js",
       "file": "cypress\\integration\\ecare_poc.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "16bef598-7ee1-4659-952c-5c4835b34ab9",
-          "title": "Actions",
+          "uuid": "467c6cf1-0cbf-485c-a68e-9c9781c8c8b5",
+          "title": "Administering vaccine via adding a new patient profile",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,35 +36,31 @@
           "tests": [
             {
               "title": "Administering vaccine via adding a new patient profile",
-              "fullTitle": "Actions Administering vaccine via adding a new patient profile",
+              "fullTitle": "Administering vaccine via adding a new patient profile Administering vaccine via adding a new patient profile",
               "timedOut": null,
-              "duration": 5952,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 141043,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.fixture('TestData/TestData.json').then(function (testData) {\n  //Step-1. Enter User Email ID\n  loginPage.enterEmailAddress(testData.LoginUserName); //Step-1. Enter User Password\n  loginPage.enterPassword(testData.Password);\n  loginPage.clickSignInBtn();\n  homePage.ClickAddPatientUnderGearIcon();\n  var firstname = testData.PatientFirstName + Math.floor(Math.random() * 100000);\n  var lastname = testData.PatientLastName + Math.floor(Math.random() * 100000);\n  addPatient.fillPatientDetails(firstname, lastname, testData.Address, testData.City, testData.State, testData.ZIP);\n  addPatient.fillPatientContactAndClickAddButton(); //Instead of validating Green Toaster. We verified Created Patient Firstname & Lastname on Patient Page\n  //Technical Reason: Since the Green Toaster created on old DOM & as soon as we click OK new DOM gets loaded \n  //(i.e) New page navigated. So we took this approach\n  addPatient.validateCreatedPatient(firstname, lastname);\n  patientDetailsPage.ClickMedicationTab();\n  patientDetailsPage.ClickPatientReportedMedicationTab();\n  patientDetailsPage.addnewMedicationForPatient(); //We validated Green Toaster - On this instance entire DOM is not refreshed & navigate to different page\n  //So, we validated short burst message\n  patientDetailsPage.validateAddedMedicationSuccessMessage();\n  patientDetailsPage.ClickeCarePlansTab();\n  patientDetailsPage.ClickeCarePlanUnderAddEncounter();\n  patientDetailsPage.filleCarePlan_NewEncounter_OverviewDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_PatientDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_Insurance_AddNewPlan_Details();\n  patientDetailsPage.filleCarePlan_NewEncounter_MedicalHistory_AddCondition_Details();\n  patientDetailsPage.filleCarePlan_NewEncounter_MedicationDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_GoalsDetails();\n  patientDetailsPage.completeEncounter(); //Added validation for existence of \"re-open\" button which verifies the successful completion of eCare Goal/Plan\n  patientDetailsPage.validateeCareCompleted();\n});",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name='UserNames']`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name='UserNames']`, but never found it.\n    at Context.eval (https://beta-account.prescribewellness.com/__cypress/tests?p=cypress\\integration\\ecare_poc.js:509:12)",
-                "diff": null
-              },
-              "uuid": "e5fb4967-ad5a-4bc6-96b6-aff634499b68",
-              "parentUUID": "16bef598-7ee1-4659-952c-5c4835b34ab9",
+              "err": {},
+              "uuid": "821d9b30-ad5d-4015-971b-a2f47c2e3b5e",
+              "parentUUID": "467c6cf1-0cbf-485c-a68e-9c9781c8c8b5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "e5fb4967-ad5a-4bc6-96b6-aff634499b68"
+          "passes": [
+            "821d9b30-ad5d-4015-971b-a2f47c2e3b5e"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5952,
+          "duration": 141043,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

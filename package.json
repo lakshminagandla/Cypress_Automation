@@ -7,7 +7,7 @@
     "clean:reports": "rd /s /q cypress\\results",
     "make:directories": "mkdir cypress\\results && mkdir cypress\\results\\mochareports",
     "pretest": "npm run clean:reports &&  npm run make:directories",
-    "scripts": "npx cypress run",
+    "scripts": "npx cypress run --browser chrome",
     "combine-reports": "mochawesome-merge cypress/results/mochawesome-report/*.json>cypress/results/mochareports/report.json",
     "generate-report": "marge cypress/results/mochareports/report.json -f report -o cypress/results/mochareports",
     "archive-report": "xcopy /s /i /y cypress\\results\\mochareports cypress\\archive\\report-%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%-%time:~1,1%-%time:~3,2%-%time:~6,2%",
