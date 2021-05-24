@@ -1,0 +1,5 @@
+{
+  "connectionsLink": "a[href='/Home/Dashboard']",
+  "completedLink": "div.pwMainContent:nth-child(14) div.pwMainLayout:nth-child(2) div.container.pwTopMargin.pwBottomMargin div.row div.col-md-12 div:nth-child(1) div:nth-child(3) ul.nav.nav-tabs li:nth-child(3) > a:nth-child(1)",
+  "text": "div[id='pwIndividualPharmacyHomePage'] div[class='tab-pane active'][id='comms-tab3'] table[class='table table-condensed'] tbody tr:nth-child(1) td"
+}

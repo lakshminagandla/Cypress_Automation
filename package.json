@@ -1,0 +1,27 @@
+{
+  "name": "afta_cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "merge": "cypress/results/*.json > cypress/results/output.json",
+    "generate_mochawesome_report": "marge cypress/reports/output.json --reportDir ./ --inline",
+    "final_report": "npm run merge && npm run generate_mochawesome_report",
+    "cy:run": "cypress run", 
+    "cy:parallel" : "cypress-parallel -s cy:run -t 3 -d cypress/integration/Parallel_Scripts -a --browser chrome"
+  },  
+  "author": "Lakshmi",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.9.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+  "description": "Cypress automation",
+  "dependencies": {
+    "cypress-parallel": "^0.3.0"
+  }
+}

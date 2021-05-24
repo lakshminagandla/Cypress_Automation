@@ -1,0 +1,22 @@
+{
+    "projectId": "up3dvw",
+    "chromeWebSecurity" : false,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reportDir": "cypress/results/mochawesome-report",
+        "overwrite": false,
+        "reportFilename" : "TabulaRasaExecutionReport",
+        "html": true,
+        "json": true
+  }, 
+
+  "author": "Aspire Systems",
+  "license": "ISC", 
+  "devDependencies": {
+    "cypress": "^4.8.0",
+    "cypress-file-upload": "^4.0.7",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.1.0"
+  }
+    
+}

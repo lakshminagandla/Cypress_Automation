@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-05-21T17:21:41.688Z",
+    "end": "2021-05-21T17:22:40.162Z",
+    "duration": 58474,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "900928ee-ce27-42c2-9143-84c2f2c03fe6",
+      "title": "",
+      "fullFile": "cypress\\integration\\ondemand_poc.js",
+      "file": "cypress\\integration\\ondemand_poc.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3e00aee5-aa01-43cd-995d-f17daa4f8283",
+          "title": "Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sending an OnDemand via the ‘Active Patients’ patient list",
+              "fullTitle": "Actions Sending an OnDemand via the ‘Active Patients’ patient list",
+              "timedOut": null,
+              "duration": 49654,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('TestData/TestData.json').then(function (testData) {\n  loginPage.enterEmailAddress(testData.LoginUserName);\n  loginPage.enterPassword(testData.Password);\n  loginPage.clickSignInBtn();\n  homePage.clickActivePatients();\n  homePage.selectFirstPatient();\n  homePage.clickOnDemandUnderActionsMenu();\n  sendModalPage.clickSelectForOnDemandCampaign();\n  sendModalPage.clickSendMessageButton();\n  sendModalPage.validateSuccessMessage();\n  connectionsPage.clickConnectionsLink();\n  connectionsPage.clickCompletedLink();\n});",
+              "err": {},
+              "uuid": "d6bf7bef-7d48-4e95-a508-7cb9e3a0759f",
+              "parentUUID": "3e00aee5-aa01-43cd-995d-f17daa4f8283",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d6bf7bef-7d48-4e95-a508-7cb9e3a0759f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 49654,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "TabulaRasaExecutionReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/mochawesome-report",
+        "overwrite": false,
+        "reportFilename": "TabulaRasaExecutionReport",
+        "html": true,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

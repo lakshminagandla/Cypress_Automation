@@ -1,0 +1,11 @@
+{
+  "activePatient": "a[href='/Home/Dashboard/ActivePatients']",
+  "activePatientWindow": "table[id='AdherenceList']",
+  "firstPatient": "table[id='AdherenceList'] tbody tr:nth-child(1)>td>div:nth-child(1) div[class='col-md-1'] input[type='checkbox']",
+  "demandOption": "ul[class='dropdown-menu actionsDropDown'] li:nth-child(2) a",
+  "sendModalWindow": "div[class='modal-demand-content']",
+  "gearIcon": "a[class*='LeftNav_linkhover__'] div[class*='LeftNav_iconBorder']",
+  "addPatientOption": "div[class*='Popover_popover']>div[class*='Popover_popover']>div>div[class*='LeftNav_link__']:nth-child(7)",
+  "patientFirstName": "input[id='addPatFirstName']",
+  "actionMenu": "div[id='pwIndividualPharmacyHomePage'] button[class*='dropdown-toggle pwBtn'][data-toggle='dropdown']"
+}

@@ -1,0 +1,31 @@
+apiVersion: v1alpha
+kind: cypress
+sauce:
+  concurrency: 3
+  region: us-west-1
+  metadata:
+    name: Testing Cypress Support
+    tags:
+      - e2e
+      - release team
+      - other tag
+    build: Release $CI_COMMIT_SHORT_SHA
+cypress:
+  version: 7.1.0
+  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+suites:
+  - name: "Tabula_Rasa_POC_TC#1"
+    browser: "chrome"
+    platformName: "Windows 10"
+    config:
+      testFiles: ['**/ondemand_poc.js']
+  - name: "Tabula_Rasa_POC_TC#2"
+    browser: "chrome"
+    platformName: "Windows 10"
+    config:
+      testFiles: ['**/vaccinations_poc.js']
+  - name: "Tabula_Rasa_POC_TC#3"
+    browser: "chrome"
+    platformName: "Windows 10"
+    config:
+      testFiles: ['**/ecare_poc.js']

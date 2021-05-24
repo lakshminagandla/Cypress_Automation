@@ -1,0 +1,5 @@
+{
+  "selectBtn"       : "div[class='modal-demand-content'] div[class='campaigns-wrapper'] div[class='row campaign-row']:nth-child(1) div[class='col-md-1'] button",
+  "sendMsgBtn"       : "div[class='preview-campaign-buttons'] button[class='btn btn-pw fright']",
+  "toastMsg"         : "div[class='toast-message']"
+}

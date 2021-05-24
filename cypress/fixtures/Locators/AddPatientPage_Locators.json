@@ -1,0 +1,13 @@
+{
+  "patientFirstNameTxt": "input[id='addPatFirstName']",
+  "patientLastNameTxt": "input[id='addPatLastName']",
+  "dob": "input[id='addPatDOB']",
+  "address": "input[id='addPatAddress']",
+  "city": "input[id='addPatCity']",
+  "state": "input[id='addPatState']",
+  "zip": "input[id='addPatZipCode']",
+  "contactTab": "li[id='pwPatModalContact']",
+  "phoneNumber": "input[id='addPatHomePhone']",
+  "addBtn": "button[id='submitPatBtn']",
+  "usernameBanner": "div[class*='patDetails-wrapper'] h2"
+}
