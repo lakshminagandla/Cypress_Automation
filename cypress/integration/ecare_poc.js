@@ -19,7 +19,7 @@ const connectionsPage = new ConnectionsLinkPage();
 const addPatient = new AddPatient();
 const patientDetailsPage = new PatientDetailsPage();
 
-context('Actions', () => {
+context('Administering vaccine via adding a new patient profile', () => {
     beforeEach(() => {
         cy.clearCookies();
         cy.visit('https://beta-web.prescribewellness.com/');

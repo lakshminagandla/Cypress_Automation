@@ -11,7 +11,7 @@ const homePage = new HomePage();
 const sendModalPage = new SendModalWindowPage();
 const connectionsPage = new ConnectionsLinkPage();
 
-context('Actions', () => {
+context('Sending an OnDemand via the ‘Active Patients’ patient list', () => {
     beforeEach(() => {
         cy.clearCookies();
         cy.visit('https://beta-web.prescribewellness.com/');
