@@ -19,14 +19,14 @@ const connectionsPage = new ConnectionsLinkPage();
 const addPatient = new AddPatient();
 const patientDetailsPage = new PatientDetailsPage();
 
-context('Administering vaccine via adding a new patient profile', () => {
+context('Actions', () => {
     beforeEach(() => {
         cy.clearCookies();
         cy.visit('https://beta-web.prescribewellness.com/');
     })
 
 
-    it('Administering vaccine via adding a new patient profile', () => {
+    it('Adding eCare encounter via adding a new patient profile', () => {
         cy.fixture('TestData/TestData.json').then(testData => {
 
             //Step-1. Enter User Email ID

@@ -1,7 +1,7 @@
 {
     "auth": {
-      "username": "lakshminagandla2",
-      "access_key": "bwAapnF1Hw8u4s3SEL9r"
+      "username": "sowdyfarms_vqmRKu",
+      "access_key": "n9Ms7KqCexjUcxThDsdB"
     },
     "browsers": [{
         "browser": "firefox",
@@ -11,10 +11,13 @@
     ],
     "run_settings": {
       "cypress_config_file": "./cypress.json",
+	"specs": ["cypress/integration/ecare_poc.js"],
       "cypress_version": "6",
-      "project_name": "Amazon smoke suite",
+      "project_name": "TabulaRasa_POC",
       "build_name": "Build no. 1",
-      "parallels": "1"
+      "parallels": "3"
+
     }
+
   }
   
