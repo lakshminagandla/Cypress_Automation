@@ -1,23 +1,84 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
+    "suites": 1,
+    "tests": 1,
     "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2021-05-24T11:52:34.036Z",
-    "end": "2021-05-24T11:52:34.036Z",
-    "duration": 0,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "failures": 1,
+    "start": "2021-05-25T04:23:52.702Z",
+    "end": "2021-05-25T04:25:51.064Z",
+    "duration": 118362,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "9297d016-4ea2-407a-9f9e-33f01c722998",
+      "title": "",
+      "fullFile": "cypress\\integration\\ecare_poc.js",
+      "file": "cypress\\integration\\ecare_poc.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eec72b65-2c61-4064-b4bc-b6cf4b9dcca6",
+          "title": "Administering vaccine via adding a new patient profile",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Administering vaccine via adding a new patient profile",
+              "fullTitle": "Administering vaccine via adding a new patient profile Administering vaccine via adding a new patient profile",
+              "timedOut": null,
+              "duration": 115484,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('TestData/TestData.json').then(function (testData) {\n  //Step-1. Enter User Email ID\n  loginPage.enterEmailAddress(testData.LoginUserName); //Step-1. Enter User Password\n  loginPage.enterPassword(testData.Password);\n  loginPage.clickSignInBtn();\n  homePage.ClickAddPatientUnderGearIcon();\n  var firstname = testData.PatientFirstName + Math.floor(Math.random() * 100000);\n  var lastname = testData.PatientLastName + Math.floor(Math.random() * 100000);\n  addPatient.fillPatientDetails(firstname, lastname, testData.Address, testData.City, testData.State, testData.ZIP);\n  addPatient.fillPatientContactAndClickAddButton(); //Instead of validating Green Toaster. We verified Created Patient Firstname & Lastname on Patient Page\n  //Technical Reason: Since the Green Toaster created on old DOM & as soon as we click OK new DOM gets loaded \n  //(i.e) New page navigated. So we took this approach\n  addPatient.validateCreatedPatient(firstname, lastname);\n  patientDetailsPage.ClickMedicationTab();\n  patientDetailsPage.ClickPatientReportedMedicationTab();\n  patientDetailsPage.addnewMedicationForPatient(); //We validated Green Toaster - On this instance entire DOM is not refreshed & navigate to different page\n  //So, we validated short burst message\n  patientDetailsPage.validateAddedMedicationSuccessMessage();\n  patientDetailsPage.ClickeCarePlansTab();\n  patientDetailsPage.ClickeCarePlanUnderAddEncounter();\n  patientDetailsPage.filleCarePlan_NewEncounter_OverviewDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_PatientDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_Insurance_AddNewPlan_Details();\n  patientDetailsPage.filleCarePlan_NewEncounter_MedicalHistory_AddCondition_Details();\n  patientDetailsPage.filleCarePlan_NewEncounter_MedicationDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_GoalsDetails();\n  patientDetailsPage.completeEncounter(); //Added validation for existence of \"re-open\" button which verifies the successful completion of eCare Goal/Plan\n  patientDetailsPage.validateeCareCompleted();\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because the center of this element is hidden from view:\n\n`<li class=\"flex flex-center mr1 pc-px2 pt2 py1 inline-block fs14 pointer\" style=\"height: 40px;\">Medical...</li>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because the center of this element is hidden from view:\n\n`<li class=\"flex flex-center mr1 pc-px2 pt2 py1 inline-block fs14 pointer\" style=\"height: 40px;\">Medical...</li>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:162731:24)\n    at ensureDescendents (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:151114:8)\n    at possiblyScrollMultipleTimes (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:151223:22)\n    at scrollContainers (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:151246:16)\n    at ensureDescendentsAndScroll (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:151250:14)\n    at ensureElIsNotCovered (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:151255:5)\n    at runAllChecks (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:151430:52)\n    at retryActionability (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:151453:16)\n    at tryCatcher (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:10765:23)\n    at Function.Promise.attempt.Promise.try (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:8039:29)\n    at tryFn (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:167065:21)\n    at whenStable (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:167103:12)\n    at https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:166598:16\n    at tryCatcher (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:10765:23)\n    at Promise._settlePromiseFromHandler (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:8700:31)\n    at Promise._settlePromise (https://beta-account.prescribewellness.com/__cypress/runner/cypress_runner.js:8757:18)\nFrom Your Spec Code:\n    at Context.eval (https://beta-account.prescribewellness.com/__cypress/tests?p=cypress\\integration\\ecare_poc.js:980:12)",
+                "diff": null
+              },
+              "uuid": "6853ecbd-ec27-4482-a120-24bc1c2b4257",
+              "parentUUID": "eec72b65-2c61-4064-b4bc-b6cf4b9dcca6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6853ecbd-ec27-4482-a120-24bc1c2b4257"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 115484,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {

@@ -1,80 +1,23 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "suites": 0,
+    "tests": 0,
+    "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2021-05-24T11:48:01.146Z",
-    "end": "2021-05-24T11:50:26.680Z",
-    "duration": 145534,
-    "testsRegistered": 1,
-    "passPercent": 100,
-    "pendingPercent": 0,
+    "start": "2021-05-25T04:23:13.595Z",
+    "end": "2021-05-25T04:23:13.599Z",
+    "duration": 4,
+    "testsRegistered": 0,
+    "passPercent": null,
+    "pendingPercent": null,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    {
-      "uuid": "126a2bf7-cb99-465a-9c62-5114e40ab923",
-      "title": "",
-      "fullFile": "cypress\\integration\\ecare_poc.js",
-      "file": "cypress\\integration\\ecare_poc.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "467c6cf1-0cbf-485c-a68e-9c9781c8c8b5",
-          "title": "Administering vaccine via adding a new patient profile",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "Administering vaccine via adding a new patient profile",
-              "fullTitle": "Administering vaccine via adding a new patient profile Administering vaccine via adding a new patient profile",
-              "timedOut": null,
-              "duration": 141043,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "cy.fixture('TestData/TestData.json').then(function (testData) {\n  //Step-1. Enter User Email ID\n  loginPage.enterEmailAddress(testData.LoginUserName); //Step-1. Enter User Password\n  loginPage.enterPassword(testData.Password);\n  loginPage.clickSignInBtn();\n  homePage.ClickAddPatientUnderGearIcon();\n  var firstname = testData.PatientFirstName + Math.floor(Math.random() * 100000);\n  var lastname = testData.PatientLastName + Math.floor(Math.random() * 100000);\n  addPatient.fillPatientDetails(firstname, lastname, testData.Address, testData.City, testData.State, testData.ZIP);\n  addPatient.fillPatientContactAndClickAddButton(); //Instead of validating Green Toaster. We verified Created Patient Firstname & Lastname on Patient Page\n  //Technical Reason: Since the Green Toaster created on old DOM & as soon as we click OK new DOM gets loaded \n  //(i.e) New page navigated. So we took this approach\n  addPatient.validateCreatedPatient(firstname, lastname);\n  patientDetailsPage.ClickMedicationTab();\n  patientDetailsPage.ClickPatientReportedMedicationTab();\n  patientDetailsPage.addnewMedicationForPatient(); //We validated Green Toaster - On this instance entire DOM is not refreshed & navigate to different page\n  //So, we validated short burst message\n  patientDetailsPage.validateAddedMedicationSuccessMessage();\n  patientDetailsPage.ClickeCarePlansTab();\n  patientDetailsPage.ClickeCarePlanUnderAddEncounter();\n  patientDetailsPage.filleCarePlan_NewEncounter_OverviewDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_PatientDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_Insurance_AddNewPlan_Details();\n  patientDetailsPage.filleCarePlan_NewEncounter_MedicalHistory_AddCondition_Details();\n  patientDetailsPage.filleCarePlan_NewEncounter_MedicationDetails();\n  patientDetailsPage.filleCarePlan_NewEncounter_GoalsDetails();\n  patientDetailsPage.completeEncounter(); //Added validation for existence of \"re-open\" button which verifies the successful completion of eCare Goal/Plan\n  patientDetailsPage.validateeCareCompleted();\n});",
-              "err": {},
-              "uuid": "821d9b30-ad5d-4015-971b-a2f47c2e3b5e",
-              "parentUUID": "467c6cf1-0cbf-485c-a68e-9c9781c8c8b5",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "821d9b30-ad5d-4015-971b-a2f47c2e3b5e"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 141043,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    }
+    false
   ],
   "meta": {
     "mocha": {

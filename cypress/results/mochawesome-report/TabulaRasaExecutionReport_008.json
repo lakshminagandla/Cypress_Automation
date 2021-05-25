@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2021-05-24T11:52:43.250Z",
-    "end": "2021-05-24T11:54:42.729Z",
-    "duration": 119479,
+    "start": "2021-05-25T04:27:30.623Z",
+    "end": "2021-05-25T04:29:22.690Z",
+    "duration": 112067,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d007b338-71a4-47f0-beab-ebe2e8c5cf61",
+      "uuid": "f55769be-8fc7-4122-9c2e-e59e6d09318c",
       "title": "",
       "fullFile": "cypress\\integration\\vaccinations_poc.js",
       "file": "cypress\\integration\\vaccinations_poc.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b0ef7485-4d7e-4845-8ed0-18f806c7b12d",
+          "uuid": "c6e1d1f8-ec33-43a3-9a69-b970cd1e06be",
           "title": "Administering vaccine via adding a new patient profile",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Administering vaccine via adding a new patient profile",
               "fullTitle": "Administering vaccine via adding a new patient profile Administering vaccine via adding a new patient profile",
               "timedOut": null,
-              "duration": 117188,
+              "duration": 109763,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.fixture('TestData/TestData.json').then(function (testData) {\n  loginPage.enterEmailAddress(testData.LoginUserName);\n  loginPage.enterPassword(testData.Password);\n  loginPage.clickSignInBtn();\n  homePage.ClickAddPatientUnderGearIcon();\n  var firstname = testData.PatientFirstName + Math.floor(Math.random() * 100000);\n  var lastname = testData.PatientLastName + Math.floor(Math.random() * 100000);\n  addPatient.fillPatientDetails(firstname, lastname, testData.Address, testData.City, testData.State, testData.ZIP);\n  addPatient.fillPatientContactAndClickAddButton(); //Instead of validating Green Toaster. We verified Created Patient Firstname & Lastname on Patient Page\n  //Technical Reason: Since the Green Toaster created on old DOM & as soon as we click OK new DOM gets loaded \n  //(i.e) New page navigated. So we took this approach\n  addPatient.validateCreatedPatient(firstname, lastname); //** Add validate for that  green toaster message stating:\n  //** “Success Account creation successful” should display in upper-right hand corner  */\n  patientDetailsPage.ClickVaccinationsTab();\n  patientDetailsPage.ClickAddNewButton();\n  patientDetailsPage.fillVaccineDetails();\n  patientDetailsPage.fillPatientDetails();\n  patientDetailsPage.fillContactDetails(); // Validated Green Toaster Success Message\n  patientDetailsPage.validateVaccineAdministered();\n});",
               "err": {},
-              "uuid": "e903a31e-20de-4d59-a78e-088c5a25a3f3",
-              "parentUUID": "b0ef7485-4d7e-4845-8ed0-18f806c7b12d",
+              "uuid": "030f5b44-65e7-48ba-a05c-eccd713a38a7",
+              "parentUUID": "c6e1d1f8-ec33-43a3-9a69-b970cd1e06be",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e903a31e-20de-4d59-a78e-088c5a25a3f3"
+            "030f5b44-65e7-48ba-a05c-eccd713a38a7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 117188,
+          "duration": 109763,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

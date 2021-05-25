@@ -3,19 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    
     "delete:reports": "del /f /s /q cypress\\results 1>nul",
     "clean:reports": "rd /s /q cypress\\results",
     "make:directories": "mkdir cypress\\results && mkdir cypress\\results\\mochareports",
     "pretest": "npm run clean:reports &&  npm run make:directories",
-    "scripts": "npx cypress run --browser chrome",
+    "scripts": "npx cypress run --browser chrome --record --key 720f512e-f489-4cdf-a86e-cbd89937c1a5",
     "combine-reports": "mochawesome-merge cypress/results/mochawesome-report/*.json>cypress/results/mochareports/report.json",
     "generate-report": "marge cypress/results/mochareports/report.json -f report -o cypress/results/mochareports",
-    "archive-report": "xcopy /s /i /y cypress\\results\\mochareports cypress\\archive\\report-%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%-%time:~1,1%-%time:~3,2%-%time:~6,2%",
+    "archive-report": "xcopy /s /i /y cypress\\results\\mochareports cypress\\archive\\report-%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%-0%time:~1,1%-%time:~3,2%-%time:~6,2%",
     "posttest": "npm run combine-reports && npm run generate-report && npm run archive-report",
     "test": "npm run scripts || npm run posttest",
     "cy:parallel": "cypress-parallel -s cy:run -t 3 -d cypress/integration/Parallel_Scripts -a --browser chrome"
   },
-  "author": "Lakshmi",
+  "author": "Sowdy",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^6.9.1",
@@ -28,6 +29,7 @@
   "description": "Cypress automation",
   "dependencies": {
     "cypress-parallel": "^0.3.0",
-    "jshint": "^2.12.0"
+    "jshint": "^2.12.0",
+    "time-stamp": "^2.2.0"
   }
 }
