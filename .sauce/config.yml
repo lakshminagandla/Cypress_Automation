@@ -1,7 +1,7 @@
 apiVersion: v1alpha
 kind: cypress
 sauce:
-  concurrency: 3
+  concurrency: 4
   region: us-west-1
   metadata:
     name: Testing Cypress Support
@@ -29,3 +29,8 @@ suites:
     platformName: "Windows 10"
     config:
       testFiles: ['**/ecare_poc.js']
+  - name: "Tabula_Rasa_POC_TC#4"
+      browser: "chrome"
+      platformName: "Windows 10"
+      config:
+        testFiles: ['**/NegativeScenario_ReTry.js']   
