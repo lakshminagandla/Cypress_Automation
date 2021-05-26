@@ -34,13 +34,8 @@ suites:
     platformName: "Windows 10"
     config:
       testFiles: ['**/NegativeScenario_ReTry.js']   
-  - name: "Tabula_Rasa_POC_TC#5-eCare-Firefox"
-    browser: "firefox"
-    platformName: "Windows 10"
-    config:
-      testFiles: ['**/ecare_poc.js']
-  - name: "Tabula_Rasa_POC_TC#6-eCare-MicrosoftEdge"
+  - name: "Tabula_Rasa_POC_TC#6-Vaccinations-MicrosoftEdge"
     browser: "microsoftedge"
     platformName: "Windows 10"
     config:
-      testFiles: ['**/ecare_poc.js']      
+      testFiles: ['**/vaccinations_poc.js']      

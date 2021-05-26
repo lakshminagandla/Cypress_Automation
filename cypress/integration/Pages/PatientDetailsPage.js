@@ -8,7 +8,6 @@ class PatientDetailsPage {
      * @returns 
      */
     ClickVaccinationsTab() {
-
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             //Wait for Vaccination Tab to appear
             cy.get(selectors.vaccinationTab, { timeout: 50000 });
