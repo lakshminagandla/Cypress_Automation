@@ -5,9 +5,17 @@ Step 2. Entered Password . Passed
 Step 3. Clicked SignIn Btn . Passed
 Step 4. Clicked Add New patient under Gear Icon . Passed
 Step 5. Filled Patient Details . Passed
-Step 5a. Firstname:TestAutomation71820. Passed
-Step 5b. Lastname:User95806. Passed
+Step 5a. Firstname:TestAutomation41097. Passed
+Step 5b. Lastname:User33754. Passed
 Step 5c. Address:9701 Jeronimo Rd. Passed
 Step 5d. City:Irvine. Passed
 Step 5e. State:CA. Passed
 Step 5f. ZIP:92618. Passed
+Step 6. Created New Patient . Passed
+Step 7. Created Patient Validated . Passed
+Step 8. Clicked Vaccination Tab . Passed
+Step 8. Clicked Vaccination Tab . Passed
+Step 9. Filled Vaccination Details . Passed
+Step 10. Filled Patient Details . Passed
+Step 11. Filled Contact Details . Passed
+Step 12. Validated Vaccine Administered message . Passed

@@ -26,7 +26,7 @@ context('Actions', () => {
     })
 
 
-    it('C1 Adding eCare encounter via adding a new patient profile', () => {
+    it('Adding eCare encounter via adding a new patient profile', () => {
         cy.fixture('TestData/TestData.json').then(testData => {
             let txtFileName = testData.txtFileLocation + 'eCare.txt';
 
