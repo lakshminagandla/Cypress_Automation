@@ -390,6 +390,10 @@ class PatientDetailsPage {
      * @returns 
      */
     fillVaccineDetails() {
+        try{}
+        catch(e){
+
+        }
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             //Wait for Add Vaccine Modal
             cy.get(selectors.searchPrimaryPhysicianTxt, { timeout: 50000 });

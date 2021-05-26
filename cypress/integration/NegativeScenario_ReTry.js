@@ -28,15 +28,19 @@ context('Actions', () => {
 
     it('Negative Scenario - To showcase RETRY in Cypress', () => {
         cy.fixture('TestData/TestData.json').then(testData => {
+            let txtFileName = testData.txtFileLocation + 'NegativeScenario.txt';
 
-            //Step-1. Enter User Email ID
+            cy.writeFile(txtFileName, 'Negative_Scenario\n');
+            cy.writeFile(txtFileName, 'Negative Scenario - To showcase RETRY in Cypress\n', { flag: 'a+' });
+
             loginPage.enterEmailAddress("ScriptFaile@gmail.com");
+            cy.writeFile(txtFileName, 'Step 1. Entered User Name . Passed\n', { flag: 'a+' });
 
-            //Step-1. Enter User Password
             loginPage.enterPassword(testData.Password);
+            cy.writeFile(txtFileName, 'Step 2. Entered Password . Passed\n', { flag: 'a+' });
 
             loginPage.clickSignInBtn();
-            
+             cy.writeFile(txtFileName, 'Step 3. Clicked SignIn Btn . Passed\n', { flag: 'a+' });
         })
 
     })

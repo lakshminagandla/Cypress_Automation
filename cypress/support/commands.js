@@ -1,9 +1,9 @@
 
 Cypress.on('uncaught:exception', (err, runnable) => {
-  if (err.message.includes("of undefined")) {
-    done();
-  }
-  else
+  // if (err.message.includes("of undefined")) {
+  //   done();
+  // }
+  // else
     return false;
 });
 

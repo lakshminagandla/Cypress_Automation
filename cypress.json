@@ -17,6 +17,10 @@
     "cypress-file-upload": "^4.0.7",
     "mochawesome": "^6.1.1",
     "mochawesome-merge": "^4.1.0"
-  }
+  },
+ "retries": {    
+    "runMode": 2,   
+    "openMode": 2
+  } 
     
 }

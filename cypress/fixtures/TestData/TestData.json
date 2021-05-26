@@ -7,5 +7,6 @@
   "Address": "9701 Jeronimo Rd",
   "City": "Irvine",
   "State": "CA",
-  "ZIP": "92618"
+  "ZIP": "92618",
+  "txtFileLocation": "./cypress/results/NotepadOutput/"
 }

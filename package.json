@@ -9,14 +9,13 @@
     "make:directories": "mkdir cypress\\results && mkdir cypress\\results\\mochareports",
     "pretest": "npm run clean:reports &&  npm run make:directories",
     "scripts": "npx cypress run --browser chrome --record --key 720f512e-f489-4cdf-a86e-cbd89937c1a5",
-    "BS_scripts": "browserstack-cypress run --sync --record --key 720f512e-f489-4cdf-a86e-cbd89937c1a5",
+    "BS_scripts": "browserstack-cypress run --sync",
     "sauceTest":"saucectl run",
     "combine-reports": "mochawesome-merge cypress/results/mochawesome-report/*.json>cypress/results/mochareports/report.json",
     "generate-report": "marge cypress/results/mochareports/report.json -f report -o cypress/results/mochareports",
     "archive-report": "xcopy /s /i /y cypress\\results\\mochareports cypress\\archive\\report-%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%-0%time:~1,1%-%time:~3,2%-%time:~6,2%",
     "posttest": "npm run combine-reports && npm run generate-report && npm run archive-report",
     "test": "npm run sauceTest || npm run posttest",
-	"BS_test": "npm run BS_scripts || npm run posttest",
     "cy:parallel": "cypress-parallel -s test -t 2 -d cypress/integration/Parallel_Scripts -a --browser chrome"
   },
   "author": "Sowdy",
@@ -27,12 +26,18 @@
     "mocha": "^5.2.0",
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
-    "mochawesome-report-generator": "^5.2.0"
+    "mochawesome-report-generator": "^5.2.0",
+ "xlsx": "^0.17.0",
+"exceljs": "^4.2.1",
+"cypress-parallel": "^0.3.0"
   },
   "description": "Cypress automation",
   "dependencies": {
     "cypress-parallel": "^0.3.0",
     "jshint": "^2.12.0",
     "time-stamp": "^2.2.0"
+  },
+  "devDependencies": {
+    "cypress-log-to-output": "^1.1.2"
   }
 }

@@ -2,22 +2,28 @@
     "auth": {
       "username": "sowdyfarms_vqmRKu",
       "access_key": "n9Ms7KqCexjUcxThDsdB"
-    },
-    "browsers": [{
-        "browser": "firefox",
-        "os": "Windows 10",
-        "versions": ["latest"]
-      }
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        }
     ],
     "run_settings": {
-      "cypress_config_file": "./cypress.json",
-	"specs": ["cypress/integration/ecare_poc.js"],
-      "cypress_version": "6",
-      "project_name": "TabulaRasa_POC",
-      "build_name": "Build no. 1",
-      "parallels": "3"
-
-    }
-
-  }
-  
+        "cypress_config_file": "./cypress.json",
+        "project_name": "Tabula_Rasa_PoC",
+        "build_name": "build-name",
+        "parallels": "1",
+        "specs": ["cypress/integration/ondemand_poc.spec.js"]
+    },
+    "connection_settings": {
+        "local": false,
+        "local_identifier": null,
+        "local_mode": null,
+        "local_config_file": null
+    },
+    "disable_usage_reporting": false
+}

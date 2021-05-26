@@ -8,12 +8,14 @@ class LoginPage {
      * @returns this
      */
     enterEmailAddress(userEmailID) {
+        var timeStart = new Date();
         cy.fixture('Locators/LoginPage_Locators.json').then(selectors => {
             // cy.typeElementWrapper(selectors.userNameTxt, userEmailID);
             cy.get(selectors.userNameTxt).type(userEmailID);
             console.log("Username entered on Login Page: betatesting633@gmail.com");
         })
-        return this;
+        var timeEnd = new Date();
+        return timeEnd.getMilliseconds() - timeStart.getMilliseconds();
     }//enterEmailAddress
 
     /**
