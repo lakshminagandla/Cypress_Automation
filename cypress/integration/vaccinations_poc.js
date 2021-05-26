@@ -20,7 +20,7 @@ context('Actions', () => {
         cy.visit('https://beta-web.prescribewellness.com/');
     })
 
-    it('Administering vaccine via adding a new patient profile', () => {
+    it('C3 Administering vaccine via adding a new patient profile', () => {
         cy.fixture('TestData/TestData.json').then(testData => {
             let txtFileName = testData.txtFileLocation + 'Vaccinations.txt';
 

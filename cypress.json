@@ -1,7 +1,8 @@
 {
     "projectId": "w7ea2k",
     "chromeWebSecurity" : false,
-    "reporter": "mochawesome",
+    
+"reporter": "mochawesome",
     "reporterOptions": {
         "reportDir": "cypress/results/mochawesome-report",
         "overwrite": false,

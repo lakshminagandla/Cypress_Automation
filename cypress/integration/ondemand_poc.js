@@ -17,7 +17,7 @@ context('Actions', () => {
         cy.visit('https://beta-web.prescribewellness.com/');
     })
 
-    it('Sending an OnDemand via the ‘Active Patients’ patient list', () => {
+    it('C2 Sending an OnDemand via the ‘Active Patients’ patient list', () => {
         cy.fixture('TestData/TestData.json').then(testData => {
             let timeStart;
             let timeEnd ;
