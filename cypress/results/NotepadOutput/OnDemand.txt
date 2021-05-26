@@ -1,0 +1,6 @@
+OnDemand_POC
+Sending an OnDemand via the ‘Active Patients’ patient list
+Step 1. Entered User Name . Passed. Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).0
+Step 2. Entered Password . Passed. Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).0
+Step 3. Clicked SignIn Btn . Passed. Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).0
+Step 4. Clicked Active Patient . Passed. Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).Wed May 26 2021 10:02:51 GMT-0400 (Eastern Daylight Time).0

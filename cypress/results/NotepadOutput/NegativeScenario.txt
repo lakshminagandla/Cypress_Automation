@@ -1,0 +1,4 @@
+Negative_Scenario
+Negative Scenario - To showcase RETRY in Cypress
+Step 1. Entered User Name . Passed
+Step 2. Entered Password . Passed

@@ -21,7 +21,9 @@
   "license": "ISC",
   "devDependencies": {
     "cypress-log-to-output": "^1.1.2",
-    "cypress-testrail-reporter": "^1.2.8"
+    "cypress-testrail-reporter": "^1.2.8",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0"
   },
   "description": "Cypress automation",
   "dependencies": {
