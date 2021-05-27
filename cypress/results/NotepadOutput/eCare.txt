@@ -2,28 +2,3 @@ eCare_POC
 Adding eCare encounter via adding a new patient profile
 Step 1. Entered User Name . Passed
 Step 2. Entered Password . Passed
-Step 3. Clicked SignIn Btn . Passed
-Step 4. Clicked Add New patient under Gear Icon . Passed
-Step 5. Filled Patient Details . Passed
-Step 5a. Firstname:TestAutomation73392. Passed
-Step 5b. Lastname:User16527. Passed
-Step 5c. Address:9701 Jeronimo Rd. Passed
-Step 5d. City:Irvine. Passed
-Step 5e. State:CA. Passed
-Step 5f. ZIP:92618. Passed
-Step 6. Created New Patient . Passed
-Step 7. Created Patient Validated . Passed
-Step 8. Clicked Medication Tab . Passed
-Step 9. Clicked Patient Reported Medication Tab . Passed
-Step 10. Added medication details for newly created patient . Passed
-Step 11. Validated newly added medication success message . Passed
-Step 12. Clicked eCare Plans Tab . Passed
-Step 13. Clicked eCare Plan under Add Encounter menu . Passed
-Step 14. Filled Overview Details for new encounter under eCare plan . Passed
-Step 15. Filled Patient Details for new encounter under eCare plan . Passed
-Step 16. Filled Insurance Details (Add New Plan) for new encounter under eCare plan . Passed
-Step 17. Filled Add Conditions Details (Medical History) for new encounter under eCare plan . Passed
-Step 18. Filled Medication Details for new encounter under eCare plan . Passed
-Step 19. Filled Goals Details for new encounter under eCare plan . Passed
-Step 20. Clicked Complete Encounter . Passed
-Step 21. Validated eCare Completed . Passed

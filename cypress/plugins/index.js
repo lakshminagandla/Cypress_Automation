@@ -9,14 +9,7 @@
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
 
-// This function is called when a project is opened or re-opened (e.g. due to
-// the project's config changing)
-
-/**
- * @type {Cypress.PluginConfig}
- */
-// eslint-disable-next-line no-unused-vars
+const selectTestsWithGrep = require('cypress-select-tests/grep');
 module.exports = (on, config) => {
-  //  require('cypress-plugin-retries/lib/plugin')(on)
-}
-// This enable to log the retry counter on the command line.
+  on('file:preprocessor', selectTestsWithGrep(config))
+};
