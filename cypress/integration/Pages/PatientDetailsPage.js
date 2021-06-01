@@ -342,7 +342,8 @@ class PatientDetailsPage {
             let goalTargetDate = ("0" + dateForGoal.getMonth()) + '/' + (dateForGoal.getDate()) + '/' + (dateForGoal.getFullYear());
             cy.get(selectors.goalTarget_NewEncounter_GoalsDetails, { timeout: 50000 }).click();
             cy.get(selectors.goalTarget_NewEncounter_GoalsDetails).type(goalTargetDate);
-
+            cy.get(selectors.selectedDateHighlighted).click();
+            
             cy.get(selectors.vaccineType_NewEncounter_GoalsDetails, { timeout: 50000 }).click({ force: true });
             cy.get(selectors.vaccineType_Option_NewEncounter_GoalsDetails, { timeout: 50000 }).click({ force: true });
             console.log("Selected 'Influenza, high dose seasonal (Fluzone)’' Vaccine");
