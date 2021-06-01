@@ -88,5 +88,7 @@
   "greenToaster": "div[class='toast-message']",
   "reOpenBtn": "button[class*='forms_button-primary'] span",
   "successGreenToaster": "h4[class='notification-title']",
-  "vaccineAdministeredMessage": "div[class='notification-message']"
+  "vaccineAdministeredMessage": "div[class='notification-message']",
+  "vaccineHistoryFirstRow": "div[class*='Table_table__'] div[class*='Table_row__']:nth-child(2) div[class*='Table_columnMiddle__']:nth-child(2) div[class*='Table_content__']:nth-child(1) span",
+  "selectedDateHighlighted": "div[class='react-datepicker__month'] div[class='react-datepicker__week']:nth-child(3) div[class*='react-datepicker__day']:nth-child(3)"
 }

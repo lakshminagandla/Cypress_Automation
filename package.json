@@ -29,6 +29,8 @@
   "description": "Cypress automation",
   "dependencies": {
     "cypress": "^7.4.0",
-    "cypress-parallel": "^0.3.0"
+    "cypress-parallel": "^0.3.0",
+    "exceljs": "^4.2.1",
+    "fs": "^0.0.1-security"
   }
 }

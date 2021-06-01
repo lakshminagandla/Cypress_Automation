@@ -337,9 +337,9 @@ class PatientDetailsPage {
             cy.get(selectors.description_NewEncounter_GoalsDetails, { timeout: 50000 }).click({ force: true });
             console.log("Selected 'BMI-39156-5' Description");
 
-            var date = new Date();
-            date.setDate(date.getDate() - 31);
-            let goalTargetDate = ("0" + date.getMonth()) + '/' + (date.getDate()) + '/' + (date.getFullYear());
+            var dateForGoal = new Date();
+            dateForGoal.setDate(dateForGoal.getDate() + 31);
+            let goalTargetDate = ("0" + dateForGoal.getMonth()) + '/' + (dateForGoal.getDate()) + '/' + (dateForGoal.getFullYear());
             cy.get(selectors.goalTarget_NewEncounter_GoalsDetails, { timeout: 50000 }).click();
             cy.get(selectors.goalTarget_NewEncounter_GoalsDetails).type(goalTargetDate);
 
@@ -401,7 +401,8 @@ class PatientDetailsPage {
             cy.get(selectors.physicianAutoCompleteTxt_VaccineDetails).click({ force: true });
             console.log("Selected 'Brittany Smith Lawson'");
 
-            let valueForNPI = Math.floor(Math.random() * 10000000000);
+            // let valueForNPI = Math.floor(Math.random() * 10000000000);
+            let valueForNPI = "8569" + Math.random().toString().substring(2, 8);
             cy.get(selectors.npiTxt_VaccineDetails, { timeout: 50000 }).click();
             cy.get(selectors.npiTxt_VaccineDetails).type(valueForNPI);
             console.log("Input to NPI: " + valueForNPI);
@@ -416,16 +417,19 @@ class PatientDetailsPage {
             cy.get(selectors.searchVaccine_Option_VaccineDetails, { timeout: 50000 }).click({ force: true });
             console.log("Selected 'Influenza, high dose seasonal (Fluzone)’' Vaccine");
 
-            let lotNumber = "C" + Math.floor(Math.random() * 10000000000);
+            // let lotNumber = "C" + Math.floor(Math.random() * 10000000000);
+            let lotNumber = "C" + Math.random().toString().substring(2, 8);
             cy.get(selectors.lotNumber_VaccineDetails).type(lotNumber);
             console.log("Input to Lot: " + lotNumber);
 
             cy.wait(1000);
-            var date = new Date();
-            date.setDate(date.getDate() - 31);
-            let expDate = ("0" + date.getMonth()) + '/' + (date.getDate()) + '/' + (date.getFullYear());
+            var dateForExpiry = new Date();
+            dateForExpiry.setMonth(dateForExpiry.getMonth() + 3);
+            let expDate = ("0" + dateForExpiry.getMonth()) + '/' + (dateForExpiry.getDate()) + '/' + (dateForExpiry.getFullYear());
             cy.get(selectors.expDateTxt_VaccineDetails, { timeout: 50000 }).click();
-            cy.get(selectors.expDateTxt_VaccineDetails).type(expDate);
+            cy.get(selectors.selectedDateHighlighted).click();
+
+            cy.wait(1000);
 
             cy.get(selectors.stateRegistryConsent_VaccineDetails, { timeout: 50000 }).click({ force: true });
             cy.get(selectors.stateRegistryConsent_Option_VaccineDetails).click({ force: true });
@@ -494,6 +498,19 @@ class PatientDetailsPage {
         })
         return this;
     }//validateVaccineAdministered
+
+/** validate Vaccine Administered
+  * @returns 
+  */
+    validateVaccineHistorySectionForAddedVaccine() {
+        cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
+            cy.get(selectors.vaccineHistoryFirstRow, { timeout: 50000 });
+            cy.get(selectors.vaccineHistoryFirstRow).invoke('text').then((text) => {
+                expect(text.trim()).contain("Influenza, high dose seasonal (Fluzone)")
+            });
+        })
+        return this;
+    }//validateVaccineHistorySectionForAddedVaccine
 }
 
 export default PatientDetailsPage;

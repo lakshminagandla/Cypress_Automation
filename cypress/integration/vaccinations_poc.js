@@ -20,7 +20,7 @@ context('(Vaccination)', () => { //Smoke or Regression
         cy.visit('https://beta-web.prescribewellness.com/');
     })
 
-    it('C3 Administering vaccine via adding a new patient profile', () => {
+     it('C3 Administering vaccine via adding a new patient profile', () => {
         cy.fixture('TestData/TestData.json').then(testData => {
             let txtFileName = testData.txtFileLocation + 'Vaccinations.txt';
 
@@ -121,6 +121,12 @@ context('(Vaccination)', () => { //Smoke or Regression
             cy.writeFile(txtFileName, 'Step 12. Validated Vaccine Administered message . Passed\n', {
                 flag: 'a+'
             });
+
+             // Validated Vaccine History
+             patientDetailsPage.validateVaccineHistorySectionForAddedVaccine();
+             cy.writeFile(txtFileName, 'Step 13. Validated Vaccine History Section for added vaccination . Passed\n', {
+                 flag: 'a+'
+             });
         })
     })
 
