@@ -69,7 +69,7 @@ class PatientDetailsPage {
     /**
      * Add new Medication for patient
      */
-    addnewMedicationForPatient() {
+    addnewMedicationForPatient(Medication) {
 
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             //Wait for + Add New Button
@@ -78,7 +78,8 @@ class PatientDetailsPage {
             cy.get(selectors.addNewBtn).click();
             console.log("Clicked + Add New Button");
 
-            cy.get(selectors.addNewBtn).type("atorvastatin");
+            // cy.get(selectors.addNewBtn).type("atorvastatin");
+            cy.get(selectors.addNewBtn).type(Medication);
             console.log("Entered: atorvastatin");
 
             cy.get(selectors.atorvastatin80MG_PlanOption, { timeout: 50000 });
@@ -92,10 +93,11 @@ class PatientDetailsPage {
    * validate Added Medication Success Message
    * @returns 
    */
-    validateAddedMedicationSuccessMessage() {
+    validateAddedMedicationSuccessMessage(MedicationSuccessMessage) {
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             cy.get(selectors.greenToaster).invoke('text').then((text) => {
-                expect(text.trim()).contain("Drugs were successfully added to patient profile")
+                // expect(text.trim()).contain("Drugs were successfully added to patient profile")
+                expect(text.trim()).contain(MedicationSuccessMessage)
             });
         })
         return this;
@@ -195,14 +197,15 @@ class PatientDetailsPage {
     /**
      * Use this method to fill eCare Plan's new Encounter - Patient Details 
      */
-    filleCarePlan_NewEncounter_PatientDetails() {
+    filleCarePlan_NewEncounter_PatientDetails(PCP) {
 
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             cy.get(selectors.patientTabeCarePlansNewEncounter, { timeout: 50000 }).click();
             console.log("Navigated to patient Tab for eCare Plan's New Encounter");
 
             cy.get(selectors.pcpTxt, { timeout: 50000 }).click({ force: true });
-            cy.get(selectors.pcpTxt, { timeout: 50000 }).type("Anderson");
+            // cy.get(selectors.pcpTxt, { timeout: 50000 }).type("Anderson");
+            cy.get(selectors.pcpTxt, { timeout: 50000 }).type(PCP);
             cy.get(selectors.pcpTxt_FirstOption, { timeout: 50000 }).click({ force: true });
             console.log("Selected 'James A Anderson' as PCP");
         })
@@ -212,7 +215,7 @@ class PatientDetailsPage {
     /**
      * Use this method to fill eCare Plan's new Encounter - Insurance's Add New Plan Details 
      */
-    filleCarePlan_NewEncounter_Insurance_AddNewPlan_Details() {
+    filleCarePlan_NewEncounter_Insurance_AddNewPlan_Details(PlanName) {
 
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             cy.get(selectors.insuranceSubTabUnderPatientTab_NewEncounter_Insurance_AddNewPlan_Details, { timeout: 50000 }).click();
@@ -225,7 +228,8 @@ class PatientDetailsPage {
             cy.get(selectors.planNameDrpDwn_ManuallyAddOption_NewEncounter_Insurance_AddNewPlan_Details, { timeout: 50000 }).click({ force: true });
             console.log("Selected 'Manually Add' as Plan Name");
 
-            cy.get(selectors.planNameTxt_NewEncounter_Insurance_AddNewPlan_Details, { timeout: 50000 }).type("Blue Cross");
+            // cy.get(selectors.planNameTxt_NewEncounter_Insurance_AddNewPlan_Details, { timeout: 50000 }).type("Blue Cross");
+            cy.get(selectors.planNameTxt_NewEncounter_Insurance_AddNewPlan_Details, { timeout: 50000 }).type(PlanName);
             console.log("Plan Name: Blue Cross");
 
             cy.get(selectors.planTypeDrpDwn_NewEncounter_Insurance_AddNewPlan_Details, { timeout: 50000 }).click({ force: true });
@@ -389,11 +393,7 @@ class PatientDetailsPage {
      * Fill Vaccine Details
      * @returns 
      */
-    fillVaccineDetails() {
-        try{}
-        catch(e){
-
-        }
+    fillVaccineDetails(NPI_First_FourCharacters,Lot_Character_Input) {
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             //Wait for Add Vaccine Modal
             cy.get(selectors.searchPrimaryPhysicianTxt, { timeout: 50000 });
@@ -403,7 +403,8 @@ class PatientDetailsPage {
             console.log("Selected 'Brittany Smith Lawson'");
 
             // let valueForNPI = Math.floor(Math.random() * 10000000000);
-            let valueForNPI = "8569" + Math.random().toString().substring(2, 8);
+            // let valueForNPI = "8569" + Math.random().toString().substring(2, 8);
+            let valueForNPI = NPI_First_FourCharacters + Math.random().toString().substring(2, 8);
             cy.get(selectors.npiTxt_VaccineDetails, { timeout: 50000 }).click();
             cy.get(selectors.npiTxt_VaccineDetails).type(valueForNPI);
             console.log("Input to NPI: " + valueForNPI);
@@ -419,7 +420,8 @@ class PatientDetailsPage {
             console.log("Selected 'Influenza, high dose seasonal (Fluzone)’' Vaccine");
 
             // let lotNumber = "C" + Math.floor(Math.random() * 10000000000);
-            let lotNumber = "C" + Math.random().toString().substring(2, 8);
+            // let lotNumber = "C" + Math.random().toString().substring(2, 8);
+            let lotNumber = Lot_Character_Input + Math.random().toString().substring(2, 8);
             cy.get(selectors.lotNumber_VaccineDetails).type(lotNumber);
             console.log("Input to Lot: " + lotNumber);
 
@@ -486,15 +488,17 @@ class PatientDetailsPage {
   * validate Vaccine Administered
   * @returns 
   */
-    validateVaccineAdministered() {
+    validateVaccineAdministered(ValidationMessage_1,ValidationMessage_2) {
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             cy.get(selectors.successGreenToaster, { timeout: 50000 });
             cy.get(selectors.successGreenToaster).invoke('text').then((text) => {
-                expect(text.trim()).contain("Success")
+                // expect(text.trim()).contain("Success")
+                expect(text.trim()).contain(ValidationMessage_1)
             });
 
             cy.get(selectors.vaccineAdministeredMessage).invoke('text').then((text) => {
-                expect(text.trim()).contain("Vaccine administration was saved correctly")
+                // expect(text.trim()).contain("Vaccine administration was saved correctly")
+                expect(text.trim()).contain(ValidationMessage_2)
             });
         })
         return this;
@@ -503,11 +507,12 @@ class PatientDetailsPage {
 /** validate Vaccine Administered
   * @returns 
   */
-    validateVaccineHistorySectionForAddedVaccine() {
+    validateVaccineHistorySectionForAddedVaccine(ValidationMessage_3) {
         cy.fixture('Locators/PatientDetailsPage_Locators.json').then(selectors => {
             cy.get(selectors.vaccineHistoryFirstRow, { timeout: 50000 });
             cy.get(selectors.vaccineHistoryFirstRow).invoke('text').then((text) => {
-                expect(text.trim()).contain("Influenza, high dose seasonal (Fluzone)")
+                // expect(text.trim()).contain("Influenza, high dose seasonal (Fluzone)")
+                expect(text.trim()).contain(ValidationMessage_3)
             });
         })
         return this;

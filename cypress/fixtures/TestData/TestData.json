@@ -8,5 +8,6 @@
   "City": "Irvine",
   "State": "CA",
   "ZIP": "92618",
-  "txtFileLocation": "./cypress/results/NotepadOutput/"
+  "txtFileLocation": "./cypress/results/NotepadOutput/",
+  "excelLocation": "./cypress/fixtures/TestData/TestCaseSpecific_TestData.xlsx"
 }

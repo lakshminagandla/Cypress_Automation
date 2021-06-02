@@ -1,9 +1,5 @@
 /// <reference types="Cypress" />
 
-/**
- * Created on 05/19 - Harish 
- *
- */
 import LoginPage from "./Pages/LoginPage"
 import HomePage from "./Pages/HomePage"
 import SendModalWindowPage from "./Pages/SendModalWindowPage"
@@ -103,16 +99,28 @@ context('(eCare)', () => { //Smoke or Regression
                 flag: 'a+'
             });
 
-            patientDetailsPage.addnewMedicationForPatient();
-            cy.writeFile(txtFileName, 'Step 10. Added medication details for newly created patient . Passed\n', {
-                flag: 'a+'
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "eCare"
+            }).then((testcase_Specific_TestData) => {
+                console.log(testcase_Specific_TestData[0].Medication);
+                patientDetailsPage.addnewMedicationForPatient(testcase_Specific_TestData[0].Medication);
+                cy.writeFile(txtFileName, 'Step 10. Added medication details for newly created patient . Passed\n', {
+                    flag: 'a+'
+                });
             });
 
             //We validated Green Toaster - On this instance entire DOM is not refreshed & navigate to different page
             //So, we validated short burst message
-            patientDetailsPage.validateAddedMedicationSuccessMessage();
-            cy.writeFile(txtFileName, 'Step 11. Validated newly added medication success message . Passed\n', {
-                flag: 'a+'
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "eCare"
+            }).then((testcase_Specific_TestData) => {
+                console.log(testcase_Specific_TestData[0].MedicationSuccessMessage);
+                patientDetailsPage.validateAddedMedicationSuccessMessage(testcase_Specific_TestData[0].MedicationSuccessMessage);
+                cy.writeFile(txtFileName, 'Step 11. Validated newly added medication success message . Passed\n', {
+                    flag: 'a+'
+                });
             });
 
             patientDetailsPage.ClickeCarePlansTab();
@@ -130,14 +138,26 @@ context('(eCare)', () => { //Smoke or Regression
                 flag: 'a+'
             });
 
-            patientDetailsPage.filleCarePlan_NewEncounter_PatientDetails();
-            cy.writeFile(txtFileName, 'Step 15. Filled Patient Details for new encounter under eCare plan . Passed\n', {
-                flag: 'a+'
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "eCare"
+            }).then((testcase_Specific_TestData) => {
+                console.log(testcase_Specific_TestData[0].PCP);
+                patientDetailsPage.filleCarePlan_NewEncounter_PatientDetails(testcase_Specific_TestData[0].PCP);
+                cy.writeFile(txtFileName, 'Step 15. Filled Patient Details for new encounter under eCare plan . Passed\n', {
+                    flag: 'a+'
+                });
             });
 
-            patientDetailsPage.filleCarePlan_NewEncounter_Insurance_AddNewPlan_Details();
-            cy.writeFile(txtFileName, 'Step 16. Filled Insurance Details (Add New Plan) for new encounter under eCare plan . Passed\n', {
-                flag: 'a+'
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "eCare"
+            }).then((testcase_Specific_TestData) => {
+                console.log(testcase_Specific_TestData[0].PlanName);
+                patientDetailsPage.filleCarePlan_NewEncounter_Insurance_AddNewPlan_Details(testcase_Specific_TestData[0].PlanName);
+                cy.writeFile(txtFileName, 'Step 16. Filled Insurance Details (Add New Plan) for new encounter under eCare plan . Passed\n', {
+                    flag: 'a+'
+                });
             });
 
             patientDetailsPage.filleCarePlan_NewEncounter_MedicalHistory_AddCondition_Details();

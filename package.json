@@ -31,6 +31,9 @@
     "cypress": "^7.4.0",
     "cypress-parallel": "^0.3.0",
     "exceljs": "^4.2.1",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "jshint": "^2.13.0",
+    "read-excel-file": "^5.1.0",
+    "xlsx": "^0.17.0"
   }
 }

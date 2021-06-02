@@ -20,8 +20,10 @@ context('(Vaccination)', () => { //Smoke or Regression
         cy.visit('https://beta-web.prescribewellness.com/');
     })
 
-     it('C3 Administering vaccine via adding a new patient profile', () => {
+    it('C3 Administering vaccine via adding a new patient profile', () => {
+
         cy.fixture('TestData/TestData.json').then(testData => {
+
             let txtFileName = testData.txtFileLocation + 'Vaccinations.txt';
 
             cy.writeFile(txtFileName, 'Vaccinations_POC\n');
@@ -101,10 +103,19 @@ context('(Vaccination)', () => { //Smoke or Regression
                 flag: 'a+'
             });
 
-            patientDetailsPage.fillVaccineDetails();
-            cy.writeFile(txtFileName, 'Step 9. Filled Vaccination Details . Passed\n', {
-                flag: 'a+'
+
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "Vaccination"
+            }).then((testcase_Specific_TestData) => {
+                console.log(testcase_Specific_TestData[0].NPI_First_FourCharacters);
+                console.log(testcase_Specific_TestData[0].Lot_Character_Input);
+                patientDetailsPage.fillVaccineDetails(testcase_Specific_TestData[0].NPI_First_FourCharacters, testcase_Specific_TestData[0].Lot_Character_Input);
+                cy.writeFile(txtFileName, 'Step 9. Filled Vaccination Details . Passed\n', {
+                    flag: 'a+'
+                });
             });
+
 
             patientDetailsPage.fillPatientDetails();
             cy.writeFile(txtFileName, 'Step 10. Filled Patient Details . Passed\n', {
@@ -116,17 +127,31 @@ context('(Vaccination)', () => { //Smoke or Regression
                 flag: 'a+'
             });
 
-            // Validated Green Toaster Success Message
-            patientDetailsPage.validateVaccineAdministered();
-            cy.writeFile(txtFileName, 'Step 12. Validated Vaccine Administered message . Passed\n', {
-                flag: 'a+'
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "Vaccination"
+            }).then((testcase_Specific_TestData) => {
+                console.log(testcase_Specific_TestData[0].ValidationMessage_1);
+                // Validated Green Toaster Success Message
+                patientDetailsPage.validateVaccineAdministered(testcase_Specific_TestData[0].ValidationMessage_1,testcase_Specific_TestData[0].ValidationMessage_2);
+                cy.writeFile(txtFileName, 'Step 12. Validated Vaccine Administered message . Passed\n', {
+                    flag: 'a+'
+                });
             });
 
-             // Validated Vaccine History
-             patientDetailsPage.validateVaccineHistorySectionForAddedVaccine();
-             cy.writeFile(txtFileName, 'Step 13. Validated Vaccine History Section for added vaccination . Passed\n', {
-                 flag: 'a+'
-             });
+
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "Vaccination"
+            }).then((testcase_Specific_TestData) => {
+                console.log(testcase_Specific_TestData[0].ValidationMessage_3);
+                // Validated Vaccine History
+                patientDetailsPage.validateVaccineHistorySectionForAddedVaccine(testcase_Specific_TestData[0].ValidationMessage_3);
+                cy.writeFile(txtFileName, 'Step 13. Validated Vaccine History Section for added vaccination . Passed\n', {
+                    flag: 'a+'
+                });
+            });
+
         })
     })
 

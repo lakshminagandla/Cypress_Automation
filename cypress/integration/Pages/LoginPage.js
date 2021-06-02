@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 
-class LoginPage {
+class LoginPage {   
 
     /**
      * Enter Email Address to Prescribe Wellness Application

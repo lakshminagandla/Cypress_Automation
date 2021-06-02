@@ -1,9 +1,5 @@
 /// <reference types="Cypress" />
 
-/**
- * Created on 05/19 - Harish 
- *
- */
 import LoginPage from "./Pages/LoginPage"
 import HomePage from "./Pages/HomePage"
 import SendModalWindowPage from "./Pages/SendModalWindowPage"
