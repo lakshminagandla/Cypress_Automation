@@ -26,7 +26,7 @@ context('(eCare)', () => { //Smoke or Regression
             let txtFileName = testData.txtFileLocation + 'eCare.txt';
 
             cy.writeFile(txtFileName, 'eCare_POC\n');
-            cy.writeFile(txtFileName, 'Adding eCare encounter via adding a new patient profile\n', {
+            cy.writeFile(txtFileName, 'Adding eCare encounter via adding a new patient profile :: 21\n', {
                 flag: 'a+'
             });
 

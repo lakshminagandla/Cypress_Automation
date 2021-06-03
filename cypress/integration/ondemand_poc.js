@@ -24,7 +24,7 @@ context('(onDemand)', () => { //Smoke or Regression
             let txtFileName = testData.txtFileLocation + 'OnDemand.txt';
 
             cy.writeFile(txtFileName, 'OnDemand_POC\n');
-            cy.writeFile(txtFileName, 'Sending an OnDemand via the ‘Active Patients’ patient list\n', {
+            cy.writeFile(txtFileName, 'Sending an OnDemand via the ‘Active Patients’ patient list :: 11\n', {
                 flag: 'a+'
             });
 
@@ -117,9 +117,6 @@ context('(onDemand)', () => { //Smoke or Regression
                 flag: 'a+'
             });
 
-            // (async function () {
-            //     await exTest();
-            // })()
         })
 
     })

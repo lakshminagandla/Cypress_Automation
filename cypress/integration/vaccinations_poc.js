@@ -27,7 +27,7 @@ context('(Vaccination)', () => { //Smoke or Regression
             let txtFileName = testData.txtFileLocation + 'Vaccinations.txt';
 
             cy.writeFile(txtFileName, 'Vaccinations_POC\n');
-            cy.writeFile(txtFileName, 'Administering vaccine via adding a new patient profile\n', {
+            cy.writeFile(txtFileName, 'Administering vaccine via adding a new patient profile :: 13\n', {
                 flag: 'a+'
             });
 

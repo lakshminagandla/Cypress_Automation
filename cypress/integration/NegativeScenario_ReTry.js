@@ -26,13 +26,18 @@ context('(Negative)', () => { //Smoke or Regression
             let txtFileName = testData.txtFileLocation + 'NegativeScenario.txt';
 
             cy.writeFile(txtFileName, 'Negative_Scenario\n');
-            cy.writeFile(txtFileName, 'Negative Scenario - To showcase RETRY in Cypress\n', {
+            cy.writeFile(txtFileName, 'Negative Scenario - To showcase RETRY in Cypress :: 3\n', {
                 flag: 'a+'
             });
 
-            loginPage.enterEmailAddress("ScriptFaile@gmail.com");
-            cy.writeFile(txtFileName, 'Step 1. Entered User Name . Passed\n', {
-                flag: 'a+'
+            cy.task('readXlsx', {
+                file: testData.excelLocation,
+                sheet: "Negative"
+            }).then((testcase_Specific_TestData) => {
+                loginPage.enterEmailAddress(testcase_Specific_TestData[0].Email);
+                cy.writeFile(txtFileName, 'Step 1. Entered User Name . Passed\n', {
+                    flag: 'a+'
+                });
             });
 
             loginPage.enterPassword(testData.Password);
