@@ -10,14 +10,16 @@
 // ***********************************************************
 
 const selectTestsWithGrep = require('cypress-select-tests/grep');
+const readXlsx = require('./read-xlsx');
+
 module.exports = (on, config) => {
   on('file:preprocessor', selectTestsWithGrep(config))
+  on('task', {'readXlsx': readXlsx.read})
 };
 
-const readXlsx = require('./read-xlsx')
-
-module.exports = (on, config) => {
-  on('task', {
-    'readXlsx': readXlsx.read
-  })
-}
+// const readXlsx = require('./read-xlsx')
+// module.exports = (on, config) => {
+//   on('task', {
+//     'readXlsx': readXlsx.read
+//   })
+// }
