@@ -46,7 +46,8 @@ async function exTest() {
                 calculatingStepsCount++;
         }
 
-        if (calculatingStepsCount != parseInt(textByLine[1].split("::")[1])) {
+        // if ((calculatingStepsCount != parseInt(textByLine[1].split("::")[1])) || calculatingStepsCount == parseInt(textByLine[1].split("::")[1]) ) {
+        if ( (calculatingStepsCount <= parseInt(textByLine[1].split("::")[1])) ) {
             worksheet.addRow({
                 stepDescription: "Script Failed at Step #" + (parseInt(calculatingStepsCount) + 1)
             }).font = {
