@@ -7,7 +7,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false;
 });
 
-
 /**
  * Wrapper created to Perform Click action on web elements
  * This wrapper handles if "Expected to find element" exception get thrown by CY during execution
