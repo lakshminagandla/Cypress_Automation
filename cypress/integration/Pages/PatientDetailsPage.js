@@ -207,7 +207,7 @@ class PatientDetailsPage {
             // cy.get(selectors.pcpTxt, { timeout: 50000 }).type("Anderson");
             cy.get(selectors.pcpTxt, { timeout: 50000 }).type(PCP);
             cy.get(selectors.pcpTxt_FirstOption, { timeout: 50000 }).click({ force: true });
-            console.log("Selected 'James A Anderson' as PCP");
+            console.log("Selected '" + PCP + "' as PCP");
         })
         return this;
     }//filleCarePlan_NewEncounter_PatientDetails
